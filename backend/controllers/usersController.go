@@ -23,6 +23,7 @@ func Existedusers(db *sql.DB, w http.ResponseWriter, r *http.Request) ([]usersda
 	var users []usersdata
 
 	data, err := db.Query(query, Owner)
+	
 	if err != nil {
 		return nil, fmt.Errorf("failled to execute the query %v", err)
 	}

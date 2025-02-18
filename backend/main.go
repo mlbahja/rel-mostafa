@@ -20,6 +20,8 @@ func main() {
 	// authentication routes
 	routes.AuthRoutes()
 	// post routes
+	routes.Chats()
+	//
 	routes.PostRoute(config.DB)
 	// like routes
 	routes.ReactionsRoute(config.DB)
@@ -27,6 +29,7 @@ func main() {
 	routes.CommentsRoute(config.DB)
 	//categoeies routes
 	routes.CategoriesRoute(config.DB)
+
 	routes.FilterRoute(config.DB)
 	fmt.Printf("Server is running on http://%s \n", address)
 	if err := http.ListenAndServe(":8080", nil); err != nil {

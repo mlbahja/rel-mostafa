@@ -10,5 +10,6 @@ const DELETE_COOKIE_DATE = -time.Hour * 24 * 365
 
 const STATIC_DIR_PUBLIC = "../frontend/public"
 const STATIC_DIR = "../frontend"
+// const STATIC_DIR_CHATS = "../frontend/public"
 
 var DB *sql.DB

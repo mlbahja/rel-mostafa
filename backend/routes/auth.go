@@ -11,5 +11,6 @@ func AuthRoutes() {
 	http.HandleFunc("/auth/register", controllers.RegisterUser)
 	http.HandleFunc("/auth/login", controllers.LoginUser)
 	http.HandleFunc("/auth/logout", controllers.Logout)
-	http.HandleFunc("/websocket", controllers.Websockethandler)
+	http.HandleFunc("/auth/websocket", controllers.Websockethandler)
+	// http.HandleFunc("/auth/chats", chats)
 }

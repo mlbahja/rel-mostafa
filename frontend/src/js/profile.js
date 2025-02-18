@@ -29,8 +29,8 @@ function settingsMenuToggle() {
 // }
 
 const themeSwitch = document.querySelector('#theme-switch');
-
 // Handle theme toggle
+
 themeSwitch.onclick = function() {
     themeSwitch.classList.toggle("dark-on");
     document.body.classList.toggle("dark");

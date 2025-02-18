@@ -51,7 +51,9 @@ func (NC *ConnectionMap) AddConnection(UserID int, conn *websocket.Conn) {
 
 func Websockethandler(w http.ResponseWriter, r *http.Request) {
 	// session :=
+	fmt.Println("---------------------------------------------------------------")
 	UserId, err := utils.UserIDFromToken(r, config.DB)
+	fmt.Println("USERID : >> ", UserId)
 	if err != nil {
 		http.Error(w, "Unauthorized: User not logged in", http.StatusUnauthorized)
 		return
@@ -65,6 +67,7 @@ func Websockethandler(w http.ResponseWriter, r *http.Request) {
 		log.Println("Upgrade error: ", err)
 		return
 	}
+	
 	defer connection.Close()
 	NC.AddConnection(UserId, connection)
 	for {

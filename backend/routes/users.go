@@ -16,6 +16,7 @@ func Getusers(db *sql.DB) {
 				fmt.Errorf("TEST : %v", err)
 			}
 			w.Header().Set("Content-Type", "application/json")
+			
 			if err := json.NewEncoder(w).Encode(users); err != nil {
 				fmt.Errorf("errrror %v ", err)
 			}

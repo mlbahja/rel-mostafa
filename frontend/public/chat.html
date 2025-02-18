@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/static/css/chat.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <title>Chats</title>
+</head>
+
+<body>
+
+    <div id="app-container">
+        <!-- Sidebar for Conversations -->
+        <div id="conversation-sidebar">
+            <h2>Conversations</h2>
+            <ul id="conversation-list">
+            </ul>
+        </div>
+
+        <!-- Chat Window -->
+        <div id="chat-container">
+            <h2 id="current-conversation">Welcome to chats</h2>
+            <div id="messages"></div>
+            <input type="text" id="message-input" class="hidden" placeholder="Type your message..." />
+
+            <button id="sendButton" class="hidden" onclick="sendMessage()">Send</button>
+
+            <!-- <button onclick="sendMessage()">Send</button> -->
+        </div>
+    </div>
+    <script src="../src/js/chats.js"></script>
+</body>
+
+</html>

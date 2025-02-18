@@ -33,7 +33,7 @@ func RegisterUser(w http.ResponseWriter, r *http.Request) {
 	user.Username = html.EscapeString(user.Username)
 	user.Email = html.EscapeString(user.Email)
 	user.Password = html.EscapeString(user.Password)
-
+	
 	if err := utils.Validation(user, true); err != nil {
 		utils.CreateResponseAndLogger(w, http.StatusBadRequest, err, err.Error())
 		return
