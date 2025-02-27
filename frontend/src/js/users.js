@@ -59,7 +59,6 @@ fetch('/users')
     .then(response => response.json())
     .then(users => {
         const container = document.getElementById('online-list-container');
-
         users.forEach(user => {
             const userDiv = document.createElement('div');
             userDiv.className = 'online-list';
@@ -70,14 +69,11 @@ fetch('/users')
             img.src = user.profile_pic || 'static/src/Unknown_person.jpg';
             img.alt = 'profile';
             imgDiv.appendChild(img);
-
             const p = document.createElement('p');
             p.textContent = user.Username;
-
             userDiv.appendChild(imgDiv);
             userDiv.appendChild(p);
             container.appendChild(userDiv);
-
             // Add click event to show the chat popup
             p.addEventListener("click", () => {
                 showChatPopup(user.Username);
@@ -102,13 +98,13 @@ fetch('/users')
 //                 <p><strong>User1:</strong> Hello!</p>
 //                 <p><strong>User2:</strong> Hi there!</p>
 //             </div>
-//             <input type="text" id="chatInput" placeholder="Type a message...">
+//             <input type="text" id="chatInput" placeholder="Ty bpe a message...">
 //         `;
 //         document.body.appendChild(chatPopup);
 
 //         // Add close functionality
 //         document.getElementById("closeChat").addEventListener("click", () => {
-//             chatPopup.style.display = "none";
+//             chatPopup.style.display = "none"; 
 //         });
 //     }
 
