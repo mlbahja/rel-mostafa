@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Page</title>
+    <link rel="stylesheet" href="static/src/css/mainpage.css">
+    <link rel="stylesheet" href="static/src/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://cdn.oaistatic.com/assets/favicon-dark-32x32-gt5kfzyp.webp" media="(prefers-color-scheme: dark)">
+    <!-- <link rel="stylesheet" href="static/src/css/login.css" /> -->
+    <link rel="stylesheet" href="static/src/css/post.css" />
+    <!-- <link rel="stylesheet" href="static/src/css/register.css" /> -->
+    <!-- <link rel="stylesheet" href="static/src/css/signup.css" /> -->
+    <link rel="stylesheet" href="static/src/css/style.css" />
+    <link rel="stylesheet" href="static/src/css/responsive.css" />
+    <link rel="stylesheet" href="static/src/css/logout.css" />
+</head>
+
+<body>
+    <div class="containerPage">
+        <div id="mainpage"></div>
+       
+
+        <!-- for logout -->
+        <div id="logoutdynamic"></div>
+
+        <div id="index"></div>
+    </div>
+
+
+
+
+    <!-- scriptsss -->
+    <script src="static/src/js/main.js"></script>
+    
+    <script type="module" src="static/src/js/posts.js"></script>
+    <script type="module" src="static/src/js/users.js"></script>
+    <!-- <script src="static/src/js/loadauth.js"></script> -->
+    <script src="static/src/js/likeDislike.js" defer></script>
+    <!-- <script src="static/src/js/register.js" defer></script>
+    <script src="static/src/js/login.js" defer></script> -->
+    <script type="module" src="static/src/js/mainpage.js" defer></script>
+    <script type="module" src="static/src/js/createPost.js" defer></script>
+    <script src="static/src/js/logout.js" defer></script>
+    <script src="static/src/js/comment.js"></script>
+    <script src="static/src/js/filter.js"></script>
+    <script src="static/src/js/profile.js" defer></script>
+    <script src="static/src/js/handleToast.js" defer></script>
+    <script src="static/src/js/chat.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const commentBtns = document.querySelectorAll(".comment-btn");
+
+            commentBtns.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    // Use index to find the correct comment section
+                    const commentContainer =
+                        document.querySelectorAll(".container-comment")[index];
+
+                    // Toggle visibility of the comment container
+                    if (commentContainer) {
+                        commentContainer.classList.toggle("hidden");
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll(".dropdown > ul").forEach((menu) => {
+            menu.style.display = "none";
+        });
+
+        // Add click event listeners to toggle dropdown menus
+        document.querySelectorAll(".dropdown > a").forEach((item) => {
+            item.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default link behavior
+
+                const dropdownMenu = this.nextElementSibling; // Get the sibling <ul>
+                const isVisible = dropdownMenu.style.display === "block";
+
+                // Hide all dropdown menus
+                document.querySelectorAll(".dropdown > ul").forEach((menu) => {
+                    menu.style.display = "none";
+                });
+
+                // Toggle the clicked dropdown menu
+                dropdownMenu.style.display = isVisible ? "none" : "block";
+            });
+        });
+
+        // Add click event listener to the window to hide dropdowns
+        window.addEventListener("click", function (e) {
+            // Check if the clicked element is not inside a dropdown
+            if (!e.target.closest(".dropdown")) {
+                document.querySelectorAll(".dropdown > ul").forEach((menu) => {
+                    menu.style.display = "none";
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <noscript>Your browser does not support JavaScript!</noscript>
+</body>
+
+</html>
